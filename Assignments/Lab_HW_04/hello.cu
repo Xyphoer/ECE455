@@ -3,7 +3,7 @@
 __global__ void hello_kernel()
 {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
-    printf("Hello from thread %d", tid);
+    printf("Hello from thread %d\n", tid);
 }
 
 int main()
