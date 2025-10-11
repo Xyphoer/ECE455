@@ -18,6 +18,10 @@ int main()
     C = (float*)malloc(size);
     for (int i = 0; i < N; i++) { A[i] = 1.0f; B[i] = 2.0f; }
 
+    cudaMalloc(&d_A, size);
+    cudaMalloc(&d_B, size);
+    cudaMalloc(&d_C, size);
+
     cudaStream_t stream1, stream2;
     cudaStreamCreate(&stream1);
     cudaStreamCreate(&stream2);
