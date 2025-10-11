@@ -14,7 +14,7 @@ int main()
 
     x = (float*)malloc(size);
     y = (float*)malloc(size);
-    for (int i = 0; i < N; i++) { x[i] = 1.0f; y = 2.0f; }
+    for (int i = 0; i < N; i++) { x[i] = 1.0f; y [i]= 2.0f; }
 
     cudaMalloc(&d_x, size);
     cudaMalloc(&d_y, size);
