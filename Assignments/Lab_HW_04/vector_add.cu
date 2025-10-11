@@ -31,7 +31,7 @@ int main()
 
     int threadsPerBlock = 256;
     int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
-    vector_add<<blocksPerGrid, threadsPerBlock>>(d_A, d_B, d_C, N);
+    vector_add<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, N);
 
     cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
 

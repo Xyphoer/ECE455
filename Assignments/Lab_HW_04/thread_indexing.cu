@@ -10,7 +10,7 @@ int main()
 {
     dim3 blocks(2, 2);
     dim3 threads(2, 3);
-    print_indices<<blocks, threads>>();
+    print_indices<<<blocks, threads>>>();
     cudaDeviceSynchronize();
     return 0;
 }

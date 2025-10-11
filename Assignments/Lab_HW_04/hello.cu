@@ -8,7 +8,7 @@ __global__ void hello_kernel()
 
 int main()
 {
-    hello_kernel<<2, 4>>();
+    hello_kernel<<<2, 4>>>();
     cudaDeviceSynchronize();
     return 0;
 }

@@ -32,8 +32,8 @@ int main()
 
     int threads = 256;
     int block_half = (half + threads - 1) / threads;
-    vector_add<<block_half, threads, 0, stream1>>(d_A, d_B, d_C, half);
-    vector_add<<block_half, threads, 0, stream2>>(d_A + half, d_B + half, d_C + half, half);
+    vector_add<<<block_half, threads, 0, stream1>>>(d_A, d_B, d_C, half);
+    vector_add<<<block_half, threads, 0, stream2>>>(d_A + half, d_B + half, d_C + half, half);
 
     cudaMemcpyAsync(C, d_C, half_size, cudaMemcpyDeviceToHost, stream1);
     cudaMemcpyAsync(C + half, d_C + half, half_size, cudaMemcpyDeviceToHost, stream2);
