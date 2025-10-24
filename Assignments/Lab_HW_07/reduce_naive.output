@@ -1,0 +1,11 @@
+Running Naive Reduction (global memory, N = 16777216)...
+Computing CPU reference...
+CPU Result: 838693836
+GPU Result: 838693836
+Difference: 0
+Validation PASSED.
+
+--- Performance ---
+CPU time: 99.46838 ms
+GPU avg kernel time (3 runs): 0.30924 ms
+Speedup (CPU / GPU): 321.65708x
